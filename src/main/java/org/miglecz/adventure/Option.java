@@ -1,4 +1,4 @@
-package org.miglecz.adventure.game;
+package org.miglecz.adventure;
 
 import lombok.Value;
 

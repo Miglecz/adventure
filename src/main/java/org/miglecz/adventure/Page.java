@@ -1,12 +1,16 @@
-package org.miglecz.adventure.game;
+package org.miglecz.adventure;
 
 import java.util.List;
 import java.util.Scanner;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class Page {
     final static Scanner SCANNER = new Scanner(System.in);
+    @Getter
+    private final int index;
+    @Getter
     private final String text;
     private final List<Option> options;
 
@@ -30,7 +34,7 @@ public class Page {
         return Integer.parseInt(SCANNER.nextLine());
     }
 
-    public static Page of(final String text, final Option... options) {
-        return new Page(text, List.of(options));
+    public static Page of(final int index, final String text, final Option... options) {
+        return new Page(index, text, List.of(options));
     }
 }
